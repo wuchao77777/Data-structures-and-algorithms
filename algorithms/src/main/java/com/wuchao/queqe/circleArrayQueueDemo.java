@@ -64,48 +64,49 @@ public class circleArrayQueueDemo {
         }
     }
 }
-class CircleArray{
-    private  int   maxSize ; //队列最大的容量
+
+class CircleArray {
+    private int maxSize; //队列最大的容量
 
     //front 变量的含义做一个调整， front 就指向队列的第一个元素，也就是说arr[front]
-    private  int   front ; //队列头
+    private int front; //队列头
     //rear 做一个调整 rear指向队列的最后一个元素的后一个位置，因为希望空出一个位置
-    private  int   rear ; //队列的尾部
+    private int rear; //队列的尾部
 
-    private  int[] arr;  //该数据用于存放数据，模拟队列
+    private int[] arr;  //该数据用于存放数据，模拟队列
 
-    public CircleArray(int arrMaxSize){
-        maxSize =arrMaxSize;
+    public CircleArray(int arrMaxSize) {
+        maxSize = arrMaxSize;
         arr = new int[maxSize];
     }
 
     //判断是否满
-    public boolean isFull(){
-        return (rear+1)%maxSize == front;
+    public boolean isFull() {
+        return (rear + 1) % maxSize == front;
     }
 
     //判断时候是否为空
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return rear == front;
     }
 
     //增加数据到队列
-    public void addQueue(int n){
+    public void addQueue(int n) {
         //判断队列是否满
-        if(isFull()){
+        if (isFull()) {
             System.out.println("队列满,不能加入数据");
             return;
         }
-      //直接将数据加入
+        //直接将数据加入
         arr[rear] = n;
-      //将rear后移
-        rear=(rear+1) % maxSize;
+        //将rear后移
+        rear = (rear + 1) % maxSize;
     }
 
     //获取队列的数据，出队列
-    public int getQueue(){
+    public int getQueue() {
         //判断队列是否为空
-        if(isEmpty()){
+        if (isEmpty()) {
             //通过抛出异常
             throw new RuntimeException("队列空，不能取出数据");
         }
@@ -114,34 +115,35 @@ class CircleArray{
         //2 .将front后移
         //3 .返回临时保存的变量
         int value = arr[front];
-        front = (front+1)%maxSize;
-        return  value;
+        front = (front + 1) % maxSize;
+        return value;
     }
 
+
     //显示队列的所有的数据
-    public void showQueue(){
+    public void showQueue() {
         //
-        if(isEmpty()){
+        if (isEmpty()) {
             System.out.println("队列是空的，没有数据~");
             return;
         }
         //思路 从front开始遍历，遍历多少个元素
 
         //取 模 的作用 和绝对值的意思一样 ！！！！！
-        for (int i = front; i < front+size(); i++) {
-            System.out.printf("arr[%d]=%d\n",i%maxSize,arr[i%maxSize]);
+        for (int i = front; i < front + size(); i++) {
+            System.out.printf("arr[%d]=%d\n", i % maxSize, arr[i % maxSize]);
         }
     }
 
     //求出当前队列的有效数据的个数
-     public int size(){
+    public int size() {
         return (maxSize + rear - front) % maxSize;
-     }
+    }
 
 
     //显示队列的头数据，注意不是取出数据
-    public int headQueue(){
-        if(isEmpty()){
+    public int headQueue() {
+        if (isEmpty()) {
             throw new RuntimeException("队列是空的，没有数据~~");
         }
         return arr[front];
