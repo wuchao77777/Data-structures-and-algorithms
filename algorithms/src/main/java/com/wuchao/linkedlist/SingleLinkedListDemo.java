@@ -1,5 +1,7 @@
 package com.wuchao.linkedlist;
 
+import com.sun.xml.internal.ws.util.Pool;
+
 import java.time.temporal.Temporal;
 
 /**
@@ -22,9 +24,21 @@ public class SingleLinkedListDemo {
         singleLinkedList.addByOrder(heroNode1);
         singleLinkedList.addByOrder(heroNode2);
 
+        HeroNode heroNode4 = new HeroNode(3, "林冲2", "虎子头");
+
+        singleLinkedList.list();
+        singleLinkedList.update(heroNode4);
+        System.out.println("删除前链表的结构");
         singleLinkedList.list();
 
+        singleLinkedList.deleteNode(1);
+        System.out.println("删除后 链表的结构");
+        singleLinkedList.list();
     }
+    //获取到单链表的有效的节点的个数(如果是带头节点的链表，需求不统计节点)
+
+
+
 }
 
 //定义singleLinkedList主要是为了管理 节点
@@ -78,6 +92,65 @@ class SingleLinkedList {
         }
 
 
+    }
+
+    //修改节点的信息，根据no编号来修改，即no编号不能改
+    public void update(HeroNode  newHeroNode){
+        if(head == null){
+            System.out.println("链表为空");
+            return ;
+        }
+        //找到需要修改的节点，根据no编号。
+        //定义一个临时的辅助变量
+        HeroNode temp = head.next;
+        Boolean flag = false;
+        while (true){
+             if(temp == null){
+                 System.out.println("链表结尾");;
+                 break;
+             }
+             if(temp.no == newHeroNode.no){
+                 flag = true;
+                 break;
+             }
+             temp = temp.next;
+        }
+        if(flag){
+            //表示修改成功
+            temp.name = newHeroNode.name;
+            temp.nickname = newHeroNode.nickname;
+        }else{
+            System.out.printf("未找到编号 %d 的节点，不能修改\n",newHeroNode.no);
+        }
+    }
+
+    //删除节点信息，
+    public void deleteNode(int no){
+      //思路。1.先找到待删除节点的前一个节点
+         //2 然后将这个节点的下一个引用指向下下一个。（直接跳过中间那个节点） 失去引用会被回收。
+        if(head == null){
+            System.out.println("链表为空");
+            return ;
+        }
+        HeroNode temp = head;
+        Boolean flag = false;  //用此判断是否找到待删除节点的前一个节点
+        while (true){
+            if(temp == null){
+                System.out.println("链表结尾");
+                break;
+            }
+            if(temp.next.no == no){
+                //找到待删除节点的前一个节点temp
+                flag = true;
+                break;
+            }
+            temp = temp.next;
+        }
+        if(flag){
+            temp.next = temp.next.next;   //删除该节点
+        }else{
+            System.out.printf("未找到此节点 %d,无法删除\n",no);
+        }
     }
 
     //显示链表[遍历]
