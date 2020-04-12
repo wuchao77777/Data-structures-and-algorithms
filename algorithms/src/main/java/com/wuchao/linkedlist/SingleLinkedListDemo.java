@@ -21,6 +21,22 @@ public class SingleLinkedListDemo {
         singleLinkedList.add(heroNode2);
         singleLinkedList.add(heroNode3);
         System.out.println("链表反转之前：");
+//        singleLinkedList.add(heroNode1);
+//        singleLinkedList.add(heroNode2);
+//        singleLinkedList.add(heroNode3);
+        //加入按照编号的顺序
+        singleLinkedList.addByOrder(heroNode3);
+        singleLinkedList.addByOrder(heroNode1);
+        singleLinkedList.addByOrder(heroNode2);
+
+
+        singleLinkedList.list();
+        singleLinkedList.update(heroNode4);
+        System.out.println("删除前链表的结构");
+        singleLinkedList.list();
+
+        singleLinkedList.deleteNode(1);
+        System.out.println("删除后 链表的结构");
         singleLinkedList.list();
 //        reversetList(singleLinkedList.getHead());
 //        System.out.println("链表反转之后：");
