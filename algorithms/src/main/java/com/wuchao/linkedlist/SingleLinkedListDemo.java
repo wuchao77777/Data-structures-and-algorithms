@@ -67,6 +67,7 @@ public class SingleLinkedListDemo {
 
     }
 
+
     /**
      * 方式二
      * 可以利用栈的数据结构，将各个节点放入栈中， 然后利用栈的先进后出的特点，实现了逆序打印的效果
@@ -200,9 +201,9 @@ class SingleLinkedList {
             if (temp.next == null) {//说明temp已经在链表的最后了
                 break;
             }
-            if (temp.next.no > heroNode.no) {
+            if (temp.next.no > heroNode.no) {//位置已经找到,就在temo后面。
                 break;
-            } else if (temp.next.no == heroNode.no) {//位置已经找到,就在temo后面。
+            } else if (temp.next.no == heroNode.no) {
                 flag = true; //编号存在
                 break;
             }
