@@ -1,4 +1,4 @@
-package main.java.com.wuchao.adapter.classadapter;
+package com.wuchao.adapter.classadapter;
 
 //适配器类
 public class VoltageAdapter extends Voltage220V implements IVoltage5V {

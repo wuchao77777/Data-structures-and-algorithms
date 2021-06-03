@@ -1,4 +1,4 @@
-package main.java.com.wuchao.adapter.classadapter;
+package com.wuchao.adapter.classadapter;
 
 
 public class Voltage220V {

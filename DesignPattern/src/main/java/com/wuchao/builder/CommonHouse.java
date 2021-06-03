@@ -1,4 +1,4 @@
-package main.java.com.wuchao.builder;
+package com.wuchao.builder;
 
 public class CommonHouse extends AbstractHouse {
 

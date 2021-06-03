@@ -1,4 +1,4 @@
-package main.java.com.wuchao.adapter.objectadapter;
+package com.wuchao.adapter.objectadapter;
 
 
 //适配接口

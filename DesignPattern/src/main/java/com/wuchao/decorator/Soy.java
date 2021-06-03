@@ -1,4 +1,4 @@
-package main.java.com.wuchao.decorator;
+package com.wuchao.decorator;
 
 /**
  * @author wu

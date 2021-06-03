@@ -1,26 +1,24 @@
-package main.java.com.wuchao.builder.improve;
+package com.wuchao.builder.improve;
 
 public class Client {
-	public static void main(String[] args) {
-		
-		CommonHouse commonHouse = new CommonHouse();
+    public static void main(String[] args) {
 
-		HouseDirector houseDirector = new HouseDirector(commonHouse);
-		
+        CommonHouse commonHouse = new CommonHouse();
 
-		House house = houseDirector.constructHouse();
-		
+        HouseDirector houseDirector = new HouseDirector(commonHouse);
 
-		
-		System.out.println("--------------------------");
 
-		HighBuilding highBuilding = new HighBuilding();
+        House house = houseDirector.constructHouse();
 
-		houseDirector.setHouseBuilder(highBuilding);
 
-		houseDirector.constructHouse();
-		
-		
-		
-	}
+        System.out.println("--------------------------");
+
+        HighBuilding highBuilding = new HighBuilding();
+
+        houseDirector.setHouseBuilder(highBuilding);
+
+        houseDirector.constructHouse();
+
+
+    }
 }

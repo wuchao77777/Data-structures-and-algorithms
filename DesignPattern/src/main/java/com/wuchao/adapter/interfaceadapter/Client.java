@@ -1,4 +1,4 @@
-package main.java.com.wuchao.adapter.interfaceadapter;
+package com.wuchao.adapter.interfaceadapter;
 
 public class Client {
 	public static void main(String[] args) {
