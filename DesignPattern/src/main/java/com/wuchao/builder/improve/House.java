@@ -1,4 +1,4 @@
-package main.java.com.wuchao.builder.improve;
+package com.wuchao.builder.improve;
 //产品->Product
 public class House {
 	private String baise;

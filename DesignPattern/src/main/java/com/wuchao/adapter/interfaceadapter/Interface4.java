@@ -1,4 +1,4 @@
-package main.java.com.wuchao.adapter.interfaceadapter;
+package com.wuchao.adapter.interfaceadapter;
 
 public interface Interface4 {
 	public void m1();

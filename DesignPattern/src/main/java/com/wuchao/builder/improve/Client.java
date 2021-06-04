@@ -1,4 +1,4 @@
-package main.java.com.wuchao.builder.improve;
+package com.wuchao.builder.improve;
 
 public class Client {
 	public static void main(String[] args) {
