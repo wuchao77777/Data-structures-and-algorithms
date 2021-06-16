@@ -13,7 +13,6 @@ package com.leetcode;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,7 +50,7 @@ public class SubarraySum {
 
         return result;
     }
-
+   // 前缀和
     public static int subarraySum1(int[] nums, int k) {
         int len = nums.length;
         // 计算前缀和数组
@@ -72,7 +71,7 @@ public class SubarraySum {
         }
         return count;
     }
-
+    //前缀和 + 哈希表优化
     public int subarraySum2(int[] nums, int k) {
         // key：前缀和，value：key 对应的前缀和的个数
         Map<Integer, Integer> preSumFreq = new HashMap<>();
