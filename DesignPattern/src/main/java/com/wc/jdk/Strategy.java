@@ -1,4 +1,4 @@
-package main.java.com.wc.jdk;
+package com.wc.jdk;
 
 import java.util.Arrays;
 import java.util.Comparator;
